@@ -64,12 +64,12 @@ from tqdm import tqdm
 from datasets import load_dataset
 
 # Load source datasets
-hf_datasets = {
-    "taco": load_dataset("BAAI/TACO", trust_remote_code=True),
-    "apps": load_dataset("codeparrot/apps", trust_remote_code=True),
-    "code_contests": load_dataset("deepmind/code_contests"),
-    "open-r1/codeforces": load_dataset("open-r1/codeforces")
-}
+```hf_datasets = {```
+```    "taco": load_dataset("BAAI/TACO", trust_remote_code=True),```
+```    "apps": load_dataset("codeparrot/apps", trust_remote_code=True),```
+```    "code_contests": load_dataset("deepmind/code_contests"),```
+```    "open-r1/codeforces": load_dataset("open-r1/codeforces")```
+```}```
 
 # Function to extract questions
 def get_question(ds_name, split, index):
