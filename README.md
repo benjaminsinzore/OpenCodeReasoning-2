@@ -74,6 +74,7 @@ hf_datasets = {
 ```
 
 # Function to extract questions
+```
 def get_question(ds_name, split, index):
     benchmark = hf_datasets[ds_name][split][int(index)]
     if ds_name == "code_contests":
@@ -101,8 +102,10 @@ def get_question(ds_name, split, index):
             question += "\n\n**Note**\n\n" + benchmark["note"]
         return question
     return None
+```
 
 # Process OpenCodeReasoning-2 dataset
+```
 ocr2_dataset = load_dataset("nvidia/OpenCodeReasoning-2")
 for ocr2_ds in [ocr2_dataset["python"], ocr2_dataset["cpp"]]:
     for ocr2_ds_item in tqdm(ocr2_ds):
@@ -112,7 +115,7 @@ for ocr2_ds in [ocr2_dataset["python"], ocr2_dataset["cpp"]]:
         assert question is not None
         assert ocr2_ds_item["question"] == "-"
         ocr2_ds_item["question"] = question
-
+```
 
 
 
